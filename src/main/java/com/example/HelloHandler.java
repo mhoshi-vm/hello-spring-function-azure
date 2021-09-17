@@ -24,7 +24,7 @@ public class HelloHandler extends FunctionInvoker<User, Greeting> {
         context.getLogger().info("Greeting user name: " + user.getName());
         return request
                 .createResponseBuilder(HttpStatus.OK)
-                .body(handleRequest(user, context))
+                .body(handleRequest(user, context, request))
                 .header("Content-Type", "application/json")
                 .build();
     }
